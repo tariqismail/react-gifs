@@ -6,7 +6,11 @@ class SearchBar extends Component {
 
     this.state = {
       term: ""
-    }
+    };
+  }
+
+  shouldComponentUpdate() {
+    return false;
   }
 
   handleUpdate = (event) => {

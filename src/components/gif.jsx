@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
 class Gif extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    // render method should only be called if the id value changes.
+    return nextProps.id !== this.props.id;
+  }
+
   handleClick = () => {
     if (this.props.selectGif) {
       this.props.selectGif(this.props.id);
     }
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    // render method should only be called if the id value changes.
-    return nextProps.id !== this.props.id;
   }
 
   render() {
